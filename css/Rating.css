@@ -1,0 +1,274 @@
+/*
+ * Lightweight HTML5, CSS3 JavaScript and PHP Star Rating System
+ * @namespace window.AcidJs
+ * @class Rating
+ * @version 1.0
+ * @developer Martin Ivanov
+ * @url developer website: http://wemakesites.net/
+ * @url developer twitter: https://twitter.com/#!/wemakesitesnet
+ * @url developer blog http://acidmartin.wordpress.com/
+ **/
+
+.acidjs-rating ul,
+.acidjs-rating li,
+.acidjs-rating li::before,
+.acidjs-rating > div > div,
+.acidjs-rating.acidjs-rating-voted::before,
+:root *> .acidjs-rating
+{
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.acidjs-rating,
+.acidjs-rating a,
+.acidjs-rating > div > div,
+.acidjs-rating.acidjs-rating-show-current-results ul::after
+{
+    unicode-bidi: bidi-override;
+}
+
+.acidjs-rating a,
+.acidjs-rating > div > div,
+.acidjs-rating.acidjs-rating-show-current-results ul::after
+{
+    direction: ltr;
+}
+
+.acidjs-rating a,
+.acidjs-rating.acidjs-rating-show-current-results ul::after,
+.acidjs-rating.acidjs-rating-show-current-results li:hover::after
+{
+    font-size: 10px;
+}
+
+.acidjs-rating a,
+.acidjs-rating li::before,
+.acidjs-rating.acidjs-rating-show-current-results li:hover::after
+{
+    text-align: center;
+}
+
+.acidjs-rating.acidjs-rating-disabled li::before,
+.acidjs-rating.acidjs-rating-disabled,
+.acidjs-rating.acidjs-rating-disabled li
+{
+    cursor: no-drop;
+}
+
+.acidjs-rating .acidjs-rating-item-selected,
+.acidjs-rating .acidjs-rating-item-selected ~ li,
+.acidjs-rating.acidjs-rating-voted::before
+{
+    color: #189800;
+}
+
+.acidjs-rating li:hover,
+.acidjs-rating li:hover ~ li
+{
+    color: #f5b301;
+}
+
+.acidjs-rating a,
+.acidjs-rating.acidjs-rating-show-current-results ul::after
+{
+    display: block;
+}
+
+.acidjs-rating a,
+.acidjs-rating.acidjs-rating-show-current-results li:hover::after
+{
+    color: #fff;
+}
+
+.acidjs-rating li::before,
+.acidjs-rating.acidjs-rating-disabled
+{
+    -webkit-pointer-events: none;
+    -moz-pointer-events: none;
+    pointer-events: none;
+}
+
+.acidjs-rating.acidjs-rating-voted::before,
+.acidjs-rating.acidjs-rating-show-current-results li:hover::after
+{
+    position: absolute;
+}
+
+.acidjs-rating.acidjs-rating-voted,
+.acidjs-rating.acidjs-rating-voted::before
+{
+    opacity: 1;
+}
+
+.acidjs-rating > div > div
+{
+    margin: 0 4px 0 0;
+    vertical-align: top;
+    font-size: 11px;
+    line-height: 20px;
+    color: #000;
+}
+
+.acidjs-rating
+{
+    display: none;
+}
+
+.acidjs-rating > div > div:empty
+{
+    display: none;
+}
+
+.acidjs-rating.acidjs-rating-show-current-results ul::after
+{
+    cursor: default;
+}
+
+.acidjs-rating *
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.acidjs-rating
+{
+    direction: rtl;
+    font-family: Arial, Helvetica, Sans-serif;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+}
+
+.acidjs-rating.acidjs-rating-show-current-results ul::after
+{
+    padding: 2px 0;
+    color: #666;
+    content: attr(data-score)" of "attr(data-count)" votes";
+}
+
+.acidjs-rating.acidjs-rating-show-current-results ul
+{
+    position: relative;
+}
+
+.acidjs-rating.acidjs-rating-show-current-results li:hover::after
+{
+    content: attr(data-votes);
+    z-index: 5;
+    left: 100%;
+    margin: 0 0 0 4px;
+    padding: 2px;
+    border-radius: 2px;
+    background: rgba(47, 52, 58, .75);
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+}
+
+.acidjs-rating li
+{
+    padding: 0 2px 0 0;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.acidjs-rating li::before
+{
+    content: "\2605";
+    width: 18px;
+    line-height: 18px;
+    font-size: 18px;
+    
+    -webkit-transition: all 150ms ease-in;
+    -moz-transition: all 150ms ease-in;
+    -ms-transition: all 150ms ease-in;
+    -o-transition: all 150ms ease-in;
+    transition: all 150ms ease-in;
+}
+
+.acidjs-rating li:hover::before
+{
+    -webkit-transform: scale(1.5);
+    -moz-transform: scale(1.5);
+    -ms-transform: scale(1.5);
+    -o-transform: scale(1.5);
+    transform: scale(1.5);
+}
+
+.acidjs-rating.acidjs-rating-disabled > div
+{
+    opacity: .5;
+}
+
+.acidjs-rating a
+{
+    padding: 1px 0;
+    text-decoration: none;
+    background: #ae1c00;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.acidjs-rating.acidjs-rating-sun li::before
+{
+    content: "\2600";
+}
+
+.acidjs-rating.acidjs-rating-heart li::before
+{
+    content: "\2764";
+}
+
+.acidjs-rating.acidjs-rating-radio li::before
+{
+    content: "\25c9";
+}
+
+.acidjs-rating.acidjs-rating-cloud li::before
+{
+    content: "\2601";
+}
+
+.acidjs-rating.acidjs-rating-shamrock li::before
+{
+    content: "\2618";
+}
+
+.acidjs-rating.acidjs-rating-smile li::before
+{
+    content: "\263b";
+}
+
+.acidjs-rating.acidjs-rating-flag li::before
+{
+    content: "\2691";
+}
+
+.acidjs-rating.acidjs-rating-cross li::before
+{
+    content: "\2720";
+}
+
+.acidjs-rating.acidjs-rating-sparkles li::before
+{
+    content: "\2728";
+}
+
+.acidjs-rating.acidjs-rating-diamond li::before
+{
+    content: "\25c6";
+}
+
+.acidjs-rating.acidjs-rating-ball li::before
+{
+    content: "\26bd";
+}
+
+.acidjs-rating.acidjs-rating-voted::before
+{
+    content: "\2714";
+    margin: 2px -14px 0;
+    font-size: 12px;
+}
